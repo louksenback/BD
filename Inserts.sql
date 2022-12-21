@@ -24,6 +24,35 @@ insert into phones values (8, '2610 250391');
 insert into phones values (9, '2610 153097');
 insert into phones values (10, '2610 012987');
 
+WORKER
+
+insert into worker values ('AM 990011', 'IWANNIS', 'ALEXANDROU', 650, 1);
+insert into worker values ('BD 880022', 'DIMITRIOS', 'GEORGAKOPOULOS', 750, 1);         
+insert into worker values ('GA 770033', 'GEWRGIOS', 'BAXEBANIS', 1000, 1);
+
+insert into worker values ('SZ 661100', 'SPYRIDWN', 'IWANNOU', 1100, 2);
+insert into worker values ('AN 552200', 'PANAGIOTHS', 'GEWRGIOU', 450, 2);
+insert into worker values ('RT 443300', 'LOUKAS', 'SHMOPOULOS', 400, 2);
+
+insert into worker values ('KB 334400', 'AGGELIKH', 'ZHSIMOPOULOU', 655.37 , 3);
+insert into worker values ('SA 225500', 'ATHANASIA', 'NAVARINOU', 736.42 , 3);
+insert into worker values ('FM 116600', 'MANWLHS', 'PAPAPANAGIWTOU', 983.26 , 3);
+
+insert into worker values ('PR 007711', 'KATERINA', 'NIKOLAOU', 600, 4);
+insert into worker values ('PR 117711', 'KALLIOPI', 'PAPADOPOULOU', 600, 4);
+insert into worker values ('BR 901130', 'ANDREAS', 'GEWRGIOU', 650, 4);
+
+insert into worker values ('AP 097015', 'ANASTASIOS', 'GEWRGOBASSIOPOULOS', 600, 5);
+insert into worker values ('PE 089614', 'NIKOLIA', 'TSERPA', 600, 5);
+insert into worker values ('MP 871240', 'ANNA', 'SPYRIDWNIDOU', 600, 5);
+
+insert into worker values ('OP 123456', 'DIMITRIOS', 'MAMOULIS', 600, 6);
+insert into worker values ('EM 400000', 'DIMITRIOS', 'EUTHIMAKIS', 1500, 6);
+insert into worker values ('AK 470000', 'NIKOLAOS', 'KROUSKAS', 600, 6);
+
+insert into worker values ('AU 700000', 'ATHANASIOS', 'MANTZARIS', 200, 7);
+insert into worker values ('GT 005000', 'GEWRGIOS', 'SIDERIS', 500, 7);
+
 ADMIN
 
 insert into admin values ('AM 990011', 'ADMINISTRATIVE', 'This worker has diploma for ADMINISTRATIVE at: University of salford.');
