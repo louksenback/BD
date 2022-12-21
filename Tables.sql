@@ -212,7 +212,7 @@ res_name varchar(20) default 'Unknown' not null,
 res_lname varchar(20) default 'Unknown' not null,
 res_lsadult enum('ADULT', 'MINOR') not null,
 
-Primary key (seatnum),
+Primary key (res_seatnum),
 
 constraint reservation_trip_id
 foreign key (res_tr_id) references trip(tr_id)
