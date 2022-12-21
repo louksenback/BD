@@ -210,7 +210,7 @@ res_tr_id int(11) not null,
 res_seatnum tinyint(4) not null,
 res_name varchar(20) default 'Unknown' not null,
 res_lname varchar(20) default 'Unknown' not null,
-res_lsadult enum('ADULT', 'MINOR'),
+res_isadult enum('ADULT', 'MINOR'),
 
 Primary key (res_seatnum),
 
