@@ -137,6 +137,7 @@ insert into travel_to values (5, 1003, '2022-12-31 18:35:00', '2023-01-06 19:35:
 RESERVATION
 
 insert into reservation values (1, 1, 'Dimitrios', 'Euaggelou', 'ADULT');
+insert into reservation values (1, 15, 'Mpamphklos', 'Mpamponhros', 'ADULT');
 insert into reservation values (2, 2, 'Xaralampos', 'Mpompos', 'ADULT');
 insert into reservation values (3, 6, 'Eugenia', 'Samara', 'ADULT');
 insert into reservation values (4, 3, 'Alexandros', 'Kollwshs', 'ADULT');
