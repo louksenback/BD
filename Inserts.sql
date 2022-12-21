@@ -139,5 +139,6 @@ RESERVATION
 insert into reservation values (1, 1, 'Dimitrios', 'Euaggelou', 'ADULT');
 insert into reservation values (2, 2, 'Xaralampos', 'Mpompos', 'ADULT');
 insert into reservation values (3, 6, 'Eugenia', 'Samara', 'ADULT');
-insert into reservation values (4, 1, 'Alexandros', 'Kollwshs', 'ADULT');
+insert into reservation values (4, 3, 'Alexandros', 'Kollwshs', 'ADULT');
 insert into reservation values (1, 45, 'Paulos', 'Kexrimparhs', 'MINOR');
+/*insert into reservation values (5, 45, 'Ben', 'Kexrimparhs', 'MINOR');*/
