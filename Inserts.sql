@@ -99,11 +99,11 @@ insert into driver values ('MP 871240', 'D', 'LOCAL', 5);
 
 TRIP
 
-insert into trip values (Null, '2022-12-31 12:35:00', '2023-01-06 12:35:00', 1, 600, 1, 'BD 880022', 'GA 770033');
-insert into trip values (Null, '2022-12-25 13:30:00', '2023-01-08 12:35:00', 4, 300, 2, 'AN 552200', 'RT 443300');
-insert into trip values (Null, '2023-02-28 14:30:00', '2023-03-02 12:35:00', 8, 600, 3, 'SA 225500', 'FM 116600');
-insert into trip values (Null, '2022-12-31 15:30:00', '2023-01-06 12:35:00', 1, 600, 4, 'EM 400000', 'BR 901130');
-insert into trip values (Null, '2022-12-31 11:30:00', '2023-01-06 12:35:00', 48, 600, 5, 'GT 005000', 'MP 871240');
+insert into trip values (Null, '2022-12-31 12:35:00', '2023-01-06 12:35:00', 1, 600, 1, 'BD 880022', 'GA 770033'); /* 1 thesi */
+insert into trip values (Null, '2022-12-25 13:30:00', '2023-01-08 12:35:00', 4, 300, 2, 'AN 552200', 'RT 443300'); /* 4 thesi */
+insert into trip values (Null, '2023-02-28 14:30:00', '2023-03-02 12:35:00', 8, 600, 3, 'SA 225500', 'FM 116600'); /* 8 thesi */
+insert into trip values (Null, '2022-12-31 15:30:00', '2023-01-06 12:35:00', 1, 600, 4, 'EM 400000', 'BR 901130'); /* 1 thesi */
+insert into trip values (Null, '2022-12-31 11:30:00', '2023-01-06 12:35:00', 48, 600, 5, 'GT 005000', 'MP 871240'); /* 48 thesi */
 
 EVENT
 
@@ -138,6 +138,7 @@ RESERVATION
 
 insert into reservation values (1, 1, 'Dimitrios', 'Euaggelou', 'ADULT');
 insert into reservation values (1, 15, 'Mpamphklos', 'Mpamponhros', 'ADULT');
+insert into reservation values (1, 16, 'Gewrgios', 'Mpamponhros', 'ADULT');
 insert into reservation values (2, 2, 'Xaralampos', 'Mpompos', 'ADULT');
 insert into reservation values (3, 6, 'Eugenia', 'Samara', 'ADULT');
 insert into reservation values (4, 3, 'Alexandros', 'Kollwshs', 'ADULT');
