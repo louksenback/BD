@@ -139,8 +139,9 @@ RESERVATION
 Αρχικά Insert
 insert into reservation values (1, 1, 'Dimitrios', 'Euaggelou', 'ADULT');
 insert into reservation values (2, 2, 'Xaralampos', 'Mpompos', 'ADULT');
-insert into reservation values (3, 6, 'Eugenia', 'Samara', 'ADULT');
+insert into reservation values (3, 6, 'Eugenia', 'Samara', 'MINOR');
 insert into reservation values (4, 3, 'Alexandros', 'Kollwshs', 'ADULT');
+insert into reservation values (5, 15, 'Spyridwn', 'Tsorwnhs', 'MINOR');
 
 Λάθος Insert
 insert into reservation values (1, 45, 'Paulos', 'Kexrimparhs', 'MINOR');
