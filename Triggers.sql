@@ -175,3 +175,65 @@ Begin
 End$
 delimiter ;
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Trigger -2- */
+
+delimiter $
+create trigger prevent_update /* αποτρέπει την αλλαγή της ημερομηνίας αναχώρησης, ημερομηνίας επιστροφής και του κόστους του ταξιδιού, αν έχουν ήδη γίνει κρατήσεις γι’ αυτό */
+
+before update on trip
+for each row
+Begin
+	declare reservation_count int;
+	
+	/* Έλεγχος αν υπάρχουν κρατήσεις για το ταξίδι με την νέα ημερομηνία αναχώρησης */
+	select count(*) into reservation_count
+	from trip
+	where tr_id = New.tr_id AND tr_departure <> New.tr_departure;
+	
+	if reservation_count > 0 Then
+		SIGNAL SQLSTATE '45000'
+			set message_text = 'Η ημερομηνία αναχώρησης δεν μπορεί να αλλάξει λόγω υπαρχουσών 				κρατήσεων.';
+	End if;
+	
+	/* Έλεγχος αν υπάρχουν κρατήσεις για το ταξίδι με τη νέα ημερομηνία επιστροφής */
+	
+	select count(*) into reservation_count
+	from trip
+	where tr_id = New.tr_id AND tr_return <> New.tr_return;
+
+	if reservation_count > 0 Then
+		SIGNAL SQLSTATE '45000'
+			set message_text = 'Η ημερομηνία επιστροφής δεν μπορεί να αλλάξει λόγω υπαρχουσών 				κρατήσεων.';
+	End if;
+
+	/*  Έλεγχος αν υπάρχουν κρατήσεις για το ταξίδι με το νέο κόστος  */
+	select count(*) into reservation_count
+	from trip
+	where tr_id = New.tr_id AND tr_cost <> New.tr_cost;
+
+	if reservation_count > 0 Then
+		SIGNAL SQLSTATE '45000'
+			set message_text ='Το κόστος του ταξιδιού δεν μπορεί να αλλάξει λόγω υπαρχουσών 				κρατήσεων.';
+	End if;
+	
+End$
+delimiter ;
