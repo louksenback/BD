@@ -230,3 +230,57 @@ user_id int(10) not null /* Εδω πρεπει να φτιαχτει ενα key
 
 
 );
+
+
+create table IT(
+
+IT_AT char(10),
+password char(10) default 'password',
+start_date date not null,
+end_date date not null,
+
+Primary key (IT_AT),
+
+constraint worker_AT 
+foreign key (IT_AT) references worker(wrk_AT)
+on delete cascade on update cascade
+
+
+);
+
+
+create table offers(
+
+offers_id int(11) not null, 
+offers_starting date not null,
+offers_ending date not null,
+offers_costPerPerson float(10) not null,
+offers_dst_id int not null,
+
+
+Primary key (offers_id),
+
+constraint destination_id 
+foreign key(offers_dst_id) references destination(dst_id)
+on delete cascade on update cascade
+);
+
+
+
+create table reservation_offers(
+reservation_offer_id int(15) not null,
+lname char(20),
+fname char(20),
+offers_id int(11) not null,
+prePurch float(7, 2),
+
+
+
+Primary key(reservation_offer_id),
+
+constraint offers_id 
+foreign key(offers_id) references offers(offers_id)
+on delete cascade on update cascade
+
+);
+
