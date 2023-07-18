@@ -226,7 +226,7 @@ create table Log(
 date_of_event datetime,
 event_type char(10),
 table_name char(10),
-user_id int(10) not null, // Εδω πρεπει να φτιαχτει ενα key Που να συνδεει τον πινακα με το προσωπο που κανει τα updates
+user_id int(10) not null, /* Εδω πρεπει να φτιαχτει ενα key Που να συνδεει τον πινακα με το προσωπο που κανει τα updates */
 
 Unique(user_id)
 );
