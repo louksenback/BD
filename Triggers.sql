@@ -237,3 +237,30 @@ Begin
 	
 End$
 delimiter ;
+
+
+
+
+
+
+
+
+
+
+
+/* Trigger -3- */
+
+delimiter $
+create trigger prevent_salary_reduction
+before update on worker
+for each row
+Begin
+	if New.wrk_salary < old.wrk_salary Then
+		SIGNAL SQLSTATE '45000'
+			set message_text = 'Η μείωση του μισθού δεν επιτρέπεται.';
+	End if;
+End$
+
+delimiter ;
+
+
