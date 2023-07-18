@@ -57,6 +57,13 @@ delimiter ;
 
 
 
+
+
+
+
+
+
+
 /* Updates */
 
 delimiter $
@@ -67,9 +74,6 @@ Begin
 	insert into Log values (CURRENT_TIMESTAMP, 'Update', 'Trip', 1);
 End$
 delimiter ;
-
-
-
 
 
 delimiter $
@@ -112,4 +116,62 @@ End$
 delimiter ;
 
 
+
+
+
+
+
+
+
+/* Deletes */
+
+delimiter $
+create trigger keep_Log_Delete_trip
+after delete on trip
+for each row 
+Begin
+	insert into log values (CURRENT_TIMESTAMP, 'Delete', 'Trip', 1);
+End$
+delimiter ;
+
+
+
+delimiter $
+create trigger keep_Log_Delete_reservation
+after delete on reservation
+for each row 
+Begin
+	insert into log values (CURRENT_TIMESTAMP, 'Delete', 'Reservation', 1);
+End$
+delimiter ;
+
+
+delimiter $
+create trigger keep_Log_Delete_event
+after delete on event
+for each row 
+Begin
+	insert into log values (CURRENT_TIMESTAMP, 'Delete', 'Event', 1);
+End$
+delimiter ;
+
+
+delimiter $
+create trigger keep_Log_Delete_travel_to
+after delete on travel_to
+for each row 
+Begin
+	insert into log values (CURRENT_TIMESTAMP, 'Delete', 'Travel_to', 1);
+End$
+delimiter ;
+
+
+delimiter $
+create trigger keep_Log_Delete_destination
+after delete on destination
+for each row 
+Begin
+	insert into log values (CURRENT_TIMESTAMP, 'Delete', 'Destination', 1);
+End$
+delimiter ;
 
