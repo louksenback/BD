@@ -187,8 +187,8 @@ create table travel_to(
 
 to_tr_id int(11) not null,
 to_dst_id int(11) not null,
-to_arrival datetime not null,
 to_departure datetime not null,
+to_return datetime not null,
 
 Primary key (to_tr_id, to_dst_id),
 
