@@ -1,6 +1,6 @@
 create table branch(
 
-br_code int(11) not null auto_increment ,
+br_code int(11) not null auto_increment,
 br_street varchar(30) not null,
 br_num int(4) not null,
 br_city varchar(30) not null,
@@ -24,7 +24,7 @@ on delete cascade on update cascade
 
 
 
-/*Εδώ βάζουμε το ph_number 11 ψαρακτηρες για να υπαρχει το κενο αναμεσα στον κωδικο της πολης και το υπολοιπο τηλεφωνο.*/
+/*Εδώ βάζουμε το ph_number 11 χαρακτηρες για να υπαρχει το κενο αναμεσα στον κωδικο της πολης και το υπολοιπο τηλεφωνο.*/
 
 
 create table worker(
@@ -210,26 +210,15 @@ res_tr_id int(11) not null,
 res_seatnum tinyint(4) not null,
 res_name varchar(20) default 'Unknown' not null,
 res_lname varchar(20) default 'Unknown' not null,
-res_isadult enum('ADULT', 'MINOR') not null,
+res_lsadult enum('ADULT', 'MINOR') not null,
 
-Primary key (res_seatnum),
+Primary key (res_tr_id, res_seatnum),
 
 constraint reservation_trip_id
 foreign key (res_tr_id) references trip(tr_id)
 on delete cascade on update cascade
 );
 
-
-
-create table Log(
-
-date_of_event datetime,
-event_type char(10),
-table_name char(20),
-user_id int(10) not null /* Εδω πρεπει να φτιαχτει ενα key Που να συνδεει τον πινακα με το προσωπο που κανει τα updates */
-
-
-);
 
 
 create table IT(
@@ -266,7 +255,6 @@ on delete cascade on update cascade
 );
 
 
-
 create table reservation_offers(
 reservation_offer_id int(15) not null,
 lname char(20),
@@ -284,3 +272,37 @@ on delete cascade on update cascade
 
 );
 
+
+create table Log(
+
+date_of_event datetime,
+event_type char(10),
+table_name char(20),
+user_id char(10) not null /* Εδω πρεπει να φτιαχτει ενα key Που να συνδεει τον πινακα με το προσωπο που κανει τα updates */
+);
+
+
+
+create table result_trip_Info_table(                        /* Βοηθητικο table για να αποθηκευσουμε data για το trip_info*/
+
+
+trip_ID int,
+tr_cost float(7,2) not null,
+maxseats tinyint not null,
+reservation_num int,
+empty_seats int,
+driver_lname varchar(20) not null default 'Unknown',
+driver_fname varchar(20) not null default 'Unknown',
+guide_lname varchar(20) not null default 'Unknown',
+guide_fname varchar(20) not null default 'Unknown',
+trip_departure datetime not null,
+trip_return datetime not null
+);
+ 
+
+
+create table IT_Logged_In(  /* Βοηθητικο για να αποθηκευεει τα στοιχεια του IT που εχει κανει log in στην εφαρμογή.*/
+
+IT_AT char(10) not null
+
+);
